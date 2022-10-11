@@ -18,6 +18,7 @@ import { SearchListComponent } from './demo/search-list/search-list.component';
 
 import { CartService } from './cart.service';
 import { LifecycleComponent } from './demo/lifecycle/lifecycle.component';
+import { FormFunctionComponent } from './demo/form-function/form-function.component';
 
 @NgModule({
   imports: [
@@ -34,6 +35,7 @@ import { LifecycleComponent } from './demo/lifecycle/lifecycle.component';
       { path: 'form', component: FormDemoComponent },
       { path: 'search', component: SearchListComponent },
       { path: 'lifecycle', component: LifecycleComponent },
+      { path: 'formFunction', component: FormFunctionComponent },
     ]),
   ],
   declarations: [
@@ -48,6 +50,7 @@ import { LifecycleComponent } from './demo/lifecycle/lifecycle.component';
     FormDemoComponent,
     SearchListComponent,
     LifecycleComponent,
+    FormFunctionComponent,
   ],
   providers: [CartService],
   bootstrap: [AppComponent],

@@ -1,0 +1,44 @@
+<p>form-function works!</p>
+
+<hr style="height:5px;border:none;border-top:5px ridge green;width:500px" />
+<p style="color:green;font-weight:bold">1.使用FormControl</p>
+<table>
+  <tr>
+    <label for="name">Name: </label>
+    <input id="name" type="text" [formControl]="name">      
+  </tr>
+</table>
+<br>
+<button (click)="updateName()">Update Name</button>
+<br>
+<pre>{{name.value}}</pre>
+<br>
+
+
+<hr style="height:5px;border:none;border-top:5px ridge green;width:500px" />
+<p style="color:green;font-weight:bold">2.使用FormGroup</p>
+
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+  <label for="first-name">First Name: </label>
+  <input id="first-name" type="text" formControlName="firstName">
+
+  <label for="last-name">Last Name: </label>
+  <input id="last-name" type="text" formControlName="lastName">
+
+  <br>
+  <button type="button" (click)="setValue()">SetValue</button>
+  <br>
+  <br>
+  <button type="submit">Submit</button>
+</form>
+<br>
+
+
+<hr style="height:5px;border:none;border-top:5px ridge green;width:500px" />
+<p style="color:green;font-weight:bold">3.循环嵌套FormGroup</p>
+
+
+
+<hr style="height:5px;border:none;border-top:5px ridge green;width:500px" />
+<p style="color:green;font-weight:bold">3.循环嵌套FormGroup</p>
