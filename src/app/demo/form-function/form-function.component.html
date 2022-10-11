@@ -38,7 +38,43 @@
 <hr style="height:5px;border:none;border-top:5px ridge green;width:500px" />
 <p style="color:green;font-weight:bold">3.循环嵌套FormGroup</p>
 
+<form [formGroup]="loginForm" (ngSubmit)="onGroupSubmit()">
+
+  <label for="username">username: </label>
+  <input id="username" type="text" formControlName="username">
+
+  <label for="password">password: </label>
+  <input id="password" type="text" formControlName="password">
+
+  <div formGroupName="address">
+    <h2>Address</h2>
+  
+    <label for="street">Street: </label>
+    <input id="street" type="text" formControlName="street">
+  
+    <label for="city">City: </label>
+    <input id="city" type="text" formControlName="city">
+  
+    <label for="state">State: </label>
+    <input id="state" type="text" formControlName="state">
+  
+    <label for="zip">Zip Code: </label>
+    <input id="zip" type="text" formControlName="zip">
+  </div>
+
+  <br>
+  <button type="button" (click)="setGroupValue()">SetValue</button>
+  <br>
+  <br>
+  <button type="submit">Submit</button>
+</form>
 
 
 <hr style="height:5px;border:none;border-top:5px ridge green;width:500px" />
-<p style="color:green;font-weight:bold">3.循环嵌套FormGroup</p>
+<p style="color:green;font-weight:bold">4.FormBuilder</p>
+
+
+
+
+<hr style="height:5px;border:none;border-top:5px ridge green;width:500px" />
+<p style="color:green;font-weight:bold">5.表单校验</p>
