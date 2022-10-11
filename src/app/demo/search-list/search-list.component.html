@@ -1,0 +1,72 @@
+<br />
+<input id="search" name="search" [(ngModel)]="search" />&nbsp;&nbsp;
+<button (click)="searchElement()">Search</button>
+&nbsp;
+<br />
+<h2>Search List</h2>
+<ul>
+  <ol *ngFor="let item of searchResult; let key = index">
+    <div>
+      <button (click)="remove(key)">{{ item }}</button>
+    </div>
+    <br />
+  </ol>
+</ul>
+
+<table border="1">
+  <tr>
+    <th>Search</th>
+    <th>ToDoList</th>
+  </tr>
+  <tr>
+    <td>
+      <input id="search" name="search" [(ngModel)]="search" />&nbsp;&nbsp;
+      <button (click)="searchElement()">Search</button>
+    </td>
+    <td>
+      <input
+        id="todo"
+        name="todo"
+        [(ngModel)]="todo"
+        (keyup)="toAdd($event)"
+      />&nbsp;&nbsp;
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <ul>
+        <ol *ngFor="let item of searchResult; let key = index">
+          <div>
+            <button (click)="remove(key)">{{ item }}</button>
+          </div>
+          <br />
+        </ol>
+      </ul>
+    </td>
+    <td>
+      <h4>正在进行中的任务</h4>
+      <ul>
+        <ol *ngFor="let item of todoList; let key = index">
+          <div *ngIf="item.status">
+            <button  (click)="changeStatus(item)">{{ item.title }}</button>=====><button (click)="removeList(key)">x</button>
+          </div>
+          <br />
+        </ol>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+      <h4>已经完成的任务</h4>
+      <ul>
+        <ol *ngFor="let item of todoList; let key = index">
+          <div *ngIf="!item.status">
+            <button (click)="changeStatus(item)">{{ item.title }}</button>=====><button (click)="removeList(key)">x</button>
+          </div>
+          <br />
+        </ol>
+      </ul>
+    </td>
+  </tr>
+</table>

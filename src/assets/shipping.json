@@ -1,0 +1,14 @@
+[
+  {
+    "type": "shipping by air",
+    "price": 29.99
+  },
+  {
+    "type": "shipping by sea",
+    "price": 13.99
+  },
+  {
+    "type": "shipping by car",
+    "price": 2.99
+  }
+]

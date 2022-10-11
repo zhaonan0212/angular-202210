@@ -1,0 +1,64 @@
+<h2>Products</h2>
+
+<table>
+  <td>
+    <a routerLink="/demo" class="button fancy-button">
+      <button >Demo</button>
+    </a>
+  </td>
+  <td>
+    <a routerLink="/form" class="button fancy-button">
+      <button >Form</button>
+    </a>
+  </td>
+  <td>
+    <a routerLink="/search" class="button fancy-button">
+      <button >Search</button>
+    </a>
+  </td>
+  <td>
+    <a routerLink="/lifecycle" class="button fancy-button">
+      <button >LifeCycle</button>
+    </a>
+  </td>
+</table>
+<br/>
+<hr style="height:5px;border:none;border-top:5px ridge green;width:500px" />
+<br/>
+<table>
+  <tr>
+      <button (click)="changeTitle()">changeTitle</button>
+  </tr>
+</table>
+<br/>
+<pre>{{title}}</pre>
+<br/>
+<br/>
+<hr style="height:5px;border:none;border-top:5px ridge green;width:500px" />
+<div *ngFor="let product of products">
+  <h3>
+    <a
+      [title]="product.name + ' details'"
+      [routerLink]="['/products', product.id]"
+    >
+      {{ product.name }}
+    </a>
+  </h3>
+
+  <p *ngIf="product.description">Description: {{ product.description }}</p>
+
+  <button type="button" (click)="share()">Share</button>
+
+  <app-product-alerts [product]="product" (notify)="onNotify()">
+  </app-product-alerts>
+
+  <!--test lifecycle -->
+  <app-lifecycle [title]="title" >
+  </app-lifecycle>
+</div>
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->

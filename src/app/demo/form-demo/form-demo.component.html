@@ -1,0 +1,67 @@
+<h2>脱单申请表</h2>
+
+<form>
+  <ul>
+    <ol>
+      <span>Name:</span>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        [(ngModel)]="peopleInfo.username"
+      />
+    </ol>
+    <ol>
+      <span>Password:</span>
+      <input
+        type="text"
+        id="password"
+        name="password"
+        [(ngModel)]="peopleInfo.password"
+      />
+    </ol>
+    <ol>
+      <span>Sex:</span>
+      <input
+        type="radio"
+        id="sex1"
+        name="sex"
+        value="1"
+        [(ngModel)]="peopleInfo.sex"
+      /><label for="sex1">男</label>
+      <input
+        type="radio"
+        id="sex2"
+        name="sex"
+        value="2"
+        [(ngModel)]="peopleInfo.sex"
+      /><label for="sex2">女</label>
+    </ol>
+    <ol>
+      <span>Address:</span>
+      <select id="address" name="address" [(ngModel)]="peopleInfo.city">
+        <option [value]="item" *ngFor="let item of peopleInfo.cityList">
+          {{ item }}
+        </option>
+      </select>
+    </ol>
+    <ol>
+      <span>Hobby:</span>
+      <span *ngFor="let item of peopleInfo.hobby; let key = index">
+        <input
+          type="checkbox"
+          [name]="item.title"
+          [id]="'checkbox' + key"
+          [(ngModel)]="item.checked"
+        /><label [for]="'checkbox'+ key">{{ item.title }}</label>
+      </span>
+    </ol>
+
+    <ol>
+      <button (click)="onSubmit()">Submit</button>
+    </ol>
+    <ol>
+      <pre>{{ peopleInfo | json }}</pre>
+    </ol>
+  </ul>
+</form>

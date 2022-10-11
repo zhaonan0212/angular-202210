@@ -1,0 +1,135 @@
+<p style="color:green;font-weight:bold">this is data-demo page!</p>
+<br />
+
+<hr style="height:5px;border:none;border-top:5px ridge green;width:500px" />
+<p style="color:green;font-weight:bold">创建属性</p>
+<h1>{{ title1 }}</h1>
+<h3>{{ title2 }}</h3>
+<h4>{{ title3 }}</h4>
+<h5>{{ title4 }}</h5>
+<br />
+
+<hr style="height:5px;border:none;border-top:5px ridge green;width:500px" />
+<p style="color:green;font-weight:bold">创建对象</p>
+<h3>Name : {{ userinfo.name }}</h3>
+<h3>Age : {{ userinfo.age }}</h3>
+<h3>Salary : {{ userinfo.salary }}</h3>
+<br />
+
+<hr style="height:5px;border:none;border-top:5px ridge green;width:500px" />
+<p style="color:green;font-weight:bold">属性赋值[]</p>
+<div title="你看到我了">
+  <p style="font-weight:bold">请将鼠标放在我上面1</p>
+</div>
+<div [title]="title1">
+  <p style="font-weight:bold">请将鼠标放在我上面2</p>
+</div>
+
+<div>
+  {{ content }}
+</div>
+<div [innerHtml]="content"></div>
+<br />
+
+<img [src]="url" alt="花朵" />
+
+<hr style="height:5px;border:none;border-top:5px ridge green;width:500px" />
+<p style="color:green;font-weight:bold">简单运算</p>
+<div>1+2={{ 1 + 2 }}</div>
+<div>2*3={{ 2 * 3 }}</div>
+<br />
+
+<hr style="height:5px;border:none;border-top:5px ridge green;width:500px" />
+<p style="color:green;font-weight:bold">定义数据</p>
+<div *ngFor="let arr of arrs">
+  {{ arr }}
+</div>
+<br />
+<div *ngFor="let one of list">
+  {{ one }}
+</div>
+<br />
+<ul>
+  <li *ngFor="let item of items; let key = index">{{ key }} --- {{ item }}</li>
+</ul>
+<br />
+<ul>
+  <li *ngFor="let car of cars">
+    <p>{{ car.cate }}</p>
+    <ol>
+      <li *ngFor="let attr of car.list">{{ attr.title }}---{{ attr.price }}</li>
+    </ol>
+  </li>
+</ul>
+<br />
+
+<hr style="height:5px;border:none;border-top:5px ridge green;width:500px" />
+<p style="color:green;font-weight:bold">判断ngif</p>
+<div *ngIf="isDisply">
+  <img [src]="imgUrl1" />
+</div>
+<div *ngIf="!isDisply">
+  <img [src]="imgUrl2" />
+</div>
+<br />
+
+<div [ngSwitch]="fruit">
+  <p *ngSwitchCase="1">香蕉</p>
+  <p *ngSwitchCase="2">苹果</p>
+  <p *ngSwitchCase="3">西红柿</p>
+  <p *ngSwitchCase="4">西瓜</p>
+  <p *ngSwitchDefault>榴莲</p>
+</div>
+<br />
+
+<hr style="height:5px;border:none;border-top:5px ridge green;width:500px" />
+<p style="color:green;font-weight:bold">ngclass/ngstyle</p>
+<div class="red" style="font-weight:bold">this is a test</div>
+
+<div [ngClass]="{ blue: true, red: false }" style="font-weight:bold">
+  this is a test
+</div>
+
+<div [ngClass]="{ orange: isDisply, red: !isDisply }" style="font-weight:bold">
+  This div is test ngClass.
+</div>
+<br />
+
+<div [ngStyle]="{ color: 'red' }" style="font-weight:bold">
+  This div is test ngStyle.
+</div>
+<div [ngStyle]="{ color: attr }" style="font-weight:bold">
+  This div is test ngStyle.
+</div>
+<br />
+
+<hr style="height:5px;border:none;border-top:5px ridge green;width:500px" />
+<p style="color:green;font-weight:bold">管道</p>
+<div style="font-weight:bold">
+  <span>{{ today }}</span>
+  <br />
+  <span>{{ today | date: 'yyyy-MM-dd HH:mm:ss' }}</span>
+</div>
+<br />
+
+<hr style="height:5px;border:none;border-top:5px ridge green;width:500px" />
+<p style="color:green;font-weight:bold">事件</p>
+
+<strong>{{ title }}</strong>
+<br />
+<br />
+<div>
+  <button class="button" type="submit" (click)="getData()">Click</button>
+</div>
+<br />
+<div>
+  <button class="button" type="submit" (click)="setData()">Click</button>
+</div>
+<br />
+<div>
+  <input type="text" (keydown)="keyDown($event)" />
+</div>
+<br />
+
+<hr style="height:5px;border:none;border-top:5px ridge green;width:500px" />
+<p style="color:green;font-weight:bold">事件</p>
