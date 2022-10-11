@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl,FormGroup } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
+import { Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form-function',
@@ -26,7 +28,20 @@ export class FormFunctionComponent implements OnInit {
       })
     });
 
-  constructor() { }
+  public userForm = this.fb.group({
+      username: ['',Validators.required],
+      password: [''],
+      address: this.fb.group({
+        street: [''],
+        city: [''],
+        state: [''],
+        zip: ['']
+      }),
+    });  
+
+  constructor(
+    private fb: FormBuilder
+    ) { }
 
   ngOnInit(): void {
   }
@@ -49,7 +64,7 @@ export class FormFunctionComponent implements OnInit {
   setGroupValue(){
     this.loginForm.patchValue({
       username: '蒙奇.D.龙',
-      password: 'haizeiwang',
+      password: '海贼王东海',
       address: {
         street: '33小镇',
         city: '东莞市',
@@ -61,6 +76,22 @@ export class FormFunctionComponent implements OnInit {
   onGroupSubmit() {
     // TODO: Use EventEmitter with form value
     console.warn(this.loginForm.value);
+  }
+  setBuilderValue(){
+    this.userForm.patchValue({
+      username: '蒙奇.D.路飞',
+      password: '海贼王南海',
+      address: {
+        street: '福田区',
+        city: '深圳市',
+        state: '广东省',
+        zip: '570261',
+      }
+    });
+  }
+  onBuilderSubmit() {
+    // TODO: Use EventEmitter with form value
+    console.warn(this.userForm.value);
   }
 
 }
