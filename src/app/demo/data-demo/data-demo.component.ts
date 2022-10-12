@@ -6,10 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./data-demo.component.css'],
 })
 export class DataDemoComponent implements OnInit {
-  public title1 = 'this is first test';
-  title2 = 'this is second test';
+  public title1 = 'this is first test';       //省略类型
+  title2 = 'this is second test';             //省略修饰符
   title3: string = 'this is thired test';
-  title4: any = 'this is fourth test';
+  title4: any = 'this is fourth test';        //any类似于java的object
 
   public userinfo: any = {
     name: 'Nolan',
@@ -58,13 +58,13 @@ export class DataDemoComponent implements OnInit {
     },
   ];
 
-  public isDisply: boolean = false;
+  public isDisply: boolean = true;
   public imgUrl1 =
     'https://img-blog.csdnimg.cn/61c4432e1345455aa98bf70ef1adfc86.gif';
   public imgUrl2 =
     'https://img-blog.csdnimg.cn/f78a21ac36af4c8695f69d4ec77f623c.gif';
 
-  public fruit: number = 1;
+  public fruit: number = 2;
 
   public attr = 'orange';
 

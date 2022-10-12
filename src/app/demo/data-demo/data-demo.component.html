@@ -84,6 +84,7 @@
 
 <hr style="height:5px;border:none;border-top:5px ridge green;width:500px" />
 <p style="color:green;font-weight:bold">ngclass/ngstyle</p>
+
 <div class="red" style="font-weight:bold">this is a test</div>
 
 <div [ngClass]="{ blue: true, red: false }" style="font-weight:bold">
@@ -98,6 +99,7 @@
 <div [ngStyle]="{ color: 'red' }" style="font-weight:bold">
   This div is test ngStyle.
 </div>
+<br />
 <div [ngStyle]="{ color: attr }" style="font-weight:bold">
   This div is test ngStyle.
 </div>
@@ -109,6 +111,11 @@
   <span>{{ today }}</span>
   <br />
   <span>{{ today | date: 'yyyy-MM-dd HH:mm:ss' }}</span>
+  <br>
+  <span>{{ userinfo }}</span>
+  <br />
+  <span>{{ userinfo | json }}</span>
+  <br>
 </div>
 <br />
 
